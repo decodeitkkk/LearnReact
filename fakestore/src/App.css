@@ -2,16 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 
 body {
-    background-color: #e0e3e8;
+    background-color: #a6b9da;
     font-family: "Rubik", sans-serif;
 }
 /* ---Sidebar css */
 .text-primary {
-    color: #5a8dee !important;
+    color: #8aacec !important;
 }
 .btn-primary {
     border-color: #5a8dee !important;
-    background-color: #5a8dee !important;
+    background-color: #345daa !important;
     color: #fff;
 }
 .shadow-md {
@@ -21,7 +21,7 @@ body {
     border-radius: 5px;
 }
 .sidebar {
-    width: 450px;
+    max-width: 380px;
     min-height: 100vh;
     box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
     background-color: #fff;
@@ -60,26 +60,8 @@ body {
     max-height: calc(100vh - 67px);
     overflow-x: hidden;
 }
-.sd-body ul {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 0;
-    padding: 0;
-}
-.sd-body ul li {
-    list-style: none;
-    margin-bottom: 8px;
-}
-.sd-body ul li .sd-link {
-    display: inline-block;
-    width: 100%;
-    padding: 10px 16px;
-    color: #475f7b;
-    background-color: #e5e8ec;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-}
+
+/* for anaylyze button */
 .wrapper {
     position: fixed;
     bottom: 20px;

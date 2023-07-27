@@ -1,5 +1,4 @@
 import logo from "./logo.svg";
-import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.js";
 import Page2 from "./component/Page2.jsx";
@@ -8,17 +7,22 @@ import Page1 from "./component/Page1";
 import Navbar from "./component/Navbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./App.css";
 
 function App() {
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+    });
 
     //----------------------------------------------GETTING ALL UNIQUE CATEGORIES
     const uniqueCategory = [...new Set(data.map((data) => data.category))];
 
     //------------------------------------------------FILTERING DATA
     let filterSearch = (value) => {
-        console.log(value);
+        // console.log(value);
         const fData = data.filter((arr) => {
             return (
                 arr.category.toLowerCase().includes(value.toLowerCase()) ||
@@ -30,7 +34,7 @@ function App() {
     };
     useEffect(() => {
         fetchdata();
-        console.log(`fetch data executed.`);
+        // console.log(`fetch data executed.`);
     }, []);
 
     //---------------------------------------------FETCHING DATA FROM API
@@ -47,7 +51,15 @@ function App() {
                     uniqueCategory={uniqueCategory}
                 />
                 <Routes>
-                    <Route path="/" element={<Page1 />} />
+                    <Route
+                        path="/"
+                        element={
+                            <Page1
+                                formData={formData}
+                                setFormData={setFormData}
+                            />
+                        }
+                    />
                     <Route
                         path="/store"
                         element={
@@ -55,6 +67,7 @@ function App() {
                                 filteredData={filteredData}
                                 data={data}
                                 uniqueCategory={uniqueCategory}
+                                formData={formData}
                             />
                         }
                     />

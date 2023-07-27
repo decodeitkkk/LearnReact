@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
 
-const Page2 = ({ filteredData, data, uniqueCategory }) => {
+const Page2 = ({ filteredData, data, uniqueCategory, formData }) => {
     const [isOpen, setIsopen] = useState(false);
 
     //----------------------------------------------SIDEBAR
@@ -22,7 +22,11 @@ const Page2 = ({ filteredData, data, uniqueCategory }) => {
             <div className="btn btn-primary wrapper" onClick={ToggleSidebar}>
                 <i className="fa fa-bars"> Analyze Products </i>
             </div>
-            <div className="w-25"></div>
+            <div className="container-fluid bg-info text-light ">
+                {formData.name !== ""
+                    ? `Welcome Mr./Mrs. ${formData.name} on fakeStore.`
+                    : ""}
+            </div>
             <div className="container d-flex ">
                 <div className=" row justify-content-center ">
                     {filteredData.map((d, i) => {

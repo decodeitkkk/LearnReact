@@ -18,20 +18,24 @@ const Cards = ({ title, image, description, price }) => {
                     }}
                     alt="..."
                 />
-                <div className="card-body">
-                    <h5 className="card-title"> {title} </h5>
-                    <p className="text-justify my-1 card-text align-baseline txt ">
+                <div className="card-body ">
+                    <h5 className="card-title mb-2"> {title} </h5>
+                    <p className="text-justify my-2 card-text align-baseline   ">
                         {IsReadMore ? description.slice(0, 150) : description}
                         <span className="fw-medium  " onClick={toggleReadMore}>
                             {IsReadMore ? "...read more" : " read less"}
                         </span>
                     </p>
-                    <p className="card-text">
-                        <span className="fw-bold">Price: {price} </span>
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                        Go somewhere
-                    </a>
+                    <div>
+                        <p className="card-text">
+                            <span className="fw-bold mb-0">
+                                Price: {price}{" "}
+                            </span>
+                        </p>
+                        <a href="#" className=" mt-0 btn btn-primary">
+                            Go somewhere
+                        </a>
+                    </div>
                 </div>
             </div>
         </>

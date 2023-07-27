@@ -12,7 +12,7 @@ const Navbar = ({ uniqueCategory, filterSearch }) => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <nav className="navbar  navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">
                         FakeStore
@@ -75,11 +75,6 @@ const Navbar = ({ uniqueCategory, filterSearch }) => {
 
                                     <li>
                                         <hr className="dropdown-divider" />
-                                    </li>
-                                    <li>
-                                        <a className="dropdown-item" href="#">
-                                            Something else here
-                                        </a>
                                     </li>
                                 </ul>
                             </li>

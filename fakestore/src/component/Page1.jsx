@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 
-const Page1 = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-    });
+const Page1 = ({ formData, setFormData }) => {
     let name, value;
     const handleInputs = (e) => {
-        console.log(e);
         name = e.target.name;
         value = e.target.value;
 
@@ -15,15 +10,18 @@ const Page1 = () => {
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-        // setFormData({ name: "", email: "" });
-        console.log(formData);
+        alert("form submitted");
     };
 
     return (
         <>
             <div>
-                <div className="container justify-content-center algin-items-center">
-                    <form onSubmit={handleSubmit}>
+                <div className="container justify-content-center algin-items-center my-5">
+                    <div className="h1 ">Register Yourself</div>
+                    <form
+                        className="border border-info p-3 rounded bg-info"
+                        onSubmit={handleSubmit}
+                    >
                         <div className="mb-3 ">
                             <label
                                 htmlFor="exampleFormControlInput1"

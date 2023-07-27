@@ -14,13 +14,13 @@ export const BarChart = ({ uniqueCategory, data }) => {
                 uniqueCategory[a].toLowerCase()
             ) {
                 count = count + Number.parseInt(data[b].rating.count);
-                console.log(`count Of ${data[b].category} : ${count}`);
+                // console.log(`count Of ${data[b].category} : ${count}`);
             }
         }
         newArr.push(count);
     }
-    console.log(uniqueCategory);
-    console.log(newArr);
+    // console.log(uniqueCategory);
+    // console.log(newArr);
     const ChartData = {
         labels: uniqueCategory,
         datasets: [
